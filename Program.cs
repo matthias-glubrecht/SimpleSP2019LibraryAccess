@@ -3,13 +3,8 @@
 using System.Net.Http.Headers;
 using System.Text.Json;
 
-// Define the class that represents the items
-
-// Define the class that represents the value object that contains an array of items
-
 var webSiteUrl = "https://sharepoint.contoso.local/sites/koeln";
 var endpoint = $"{webSiteUrl}/_api/web/lists/getbytitle('Dokumente')/items?$select=FileRef,FileLeafRef";
-
 
 // Instantiate a HttpClient object that uses a HttpClientHandler object that uses the default credentials
 var client = new HttpClient(new HttpClientHandler() { UseDefaultCredentials = true });
