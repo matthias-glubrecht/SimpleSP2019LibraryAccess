@@ -21,6 +21,6 @@ if (value != null && value.Items != null)
 {
     foreach (var item in value.Items)
     {
-        Console.WriteLine($"FileRef: {item.FileRef}, FileLeafRef: {item.FileLeafRef}");
+        Console.WriteLine($"Dateiname: {item.FileLeafRef},\tPfad: {item.FileRef}");
     }
 }
