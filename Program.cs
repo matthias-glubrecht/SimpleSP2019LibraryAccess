@@ -84,8 +84,16 @@ var entry = Console.ReadLine();
 
 if (entry != null && entry.ToLowerInvariant() == "j")
 {
-    // Feldinformationen auslesen
-    var responseFields = await client.GetAsync(endpointListFields);
+    HttpResponseMessage responseFields;
+    try
+    {
+        responseFields = await client.GetAsync(endpointListFields);
+    }
+    catch (HttpRequestException e)
+    {
+        Console.WriteLine($"Fehler: {e.Message}");
+        return;
+    }
     if (!isErrorResponse(responseFields))
     {
         var contentFields = await responseFields.Content.ReadAsStringAsync();
@@ -114,7 +122,17 @@ var projektId = Console.ReadLine();
 // retrieve the items from the endpoint
 var endPoint = endpointItemsTemplate.Replace("$PROJEKTID$", projektId);
 Console.WriteLine($"Endpoint: {endPoint}");
-var responseItems = await client.GetAsync(endPoint);
+
+HttpResponseMessage responseItems;
+try
+{
+    responseItems = await client.GetAsync(endPoint);
+}
+catch (HttpRequestException e)
+{
+    Console.WriteLine($"Fehler: {e.Message}");
+    return;
+}
 
 if (isErrorResponse(responseItems))
 {
@@ -141,7 +159,7 @@ if (itemsValue != null && itemsValue.Items != null)
             // Ausgabe aller Spaltenwerte
             Console.WriteLine();
             Console.WriteLine("---------------------------------");
-            Console.WriteLine($"Dokument {lfdNr++}");
+            Console.WriteLine($"Laufende Nummer {lfdNr++}");
             Console.WriteLine($"Dateiname:  '{item.FileLeafRef}'");
             Console.WriteLine($"Pfad:       '{item.FileRef}'");
             Console.WriteLine($"Projekt-ID: '{item.ProjektId}'");
