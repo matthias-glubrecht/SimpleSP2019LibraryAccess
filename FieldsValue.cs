@@ -1,7 +1,7 @@
 using System.Text.Json.Serialization;
 
-public class Value
+public class FieldsValue
 {
     [JsonPropertyName("value")]
-    public List<Item>? Items { get; set; }
+    public List<Field>? Fields { get; set; }
 }

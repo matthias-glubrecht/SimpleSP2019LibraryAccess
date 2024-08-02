@@ -1,0 +1,19 @@
+{
+    "odata.error": {
+        "code": "-1, Microsoft.SharePoint.SPException",
+        "message": {
+            "lang": "de-DE",
+            "value": "Die Feldeigenschaft 'LinkFileName' ist nicht vorhanden."
+        },
+        "innererror": {
+            "message": "Die Feldeigenschaft 'LinkFileName' ist nicht vorhanden.",
+            "type": "Microsoft.SharePoint.SPException",
+            "stacktrace": "   at Microsoft.SharePoint.SPListItemEntityCollectionCamlQueryBuilder.CheckSelectAndExpand()\r\n   at Microsoft.SharePoint.SPListItemEntityCollectionCamlQueryBuilder.BuildCamlQuery()\r\n   at Microsoft.SharePoint.SPListItemEntityCollectionCamlQueryBuilder..ctor(SPList list, RESTfulQuery restQuery, Nullable`1 itemId, Boolean includeAllFields)\r\n   at Microsoft.SharePoint.SPListItemEntityCollectionQuery..ctor(SPList list, RESTfulQuery restQuery, Nullable`1 itemId)\r\n   at Microsoft.SharePoint.SPListItemEntityCollection.TryWriteAsOData(ServerStub serverStub, ODataWriter writer, RESTfulQuery query, ProxyContext proxyContext)\r\n   at Microsoft.SharePoint.Client.ServerStub.Write(Object value, Uri path, ODataWriter writer, RESTfulQuery query, ProxyContext proxyContext)\r\n   at Microsoft.SharePoint.Client.Rest.RestRequestProcessor.Process()\r\n   at Microsoft.SharePoint.Client.Rest.RestRequestProcessor.ProcessRequest()\r\n   at Microsoft.SharePoint.Client.Rest.RestService.ProcessQuery(ClientServiceHost serviceHost, Stream inputStream, IList`1 pendingDisposableContainer)",
+            "internalexception": {
+                "message": "Die Feldeigenschaft 'LinkFileName' ist nicht vorhanden.",
+                "type": "Microsoft.SharePoint.Client.InvalidClientQueryException",
+                "stacktrace": ""
+            }
+        }
+    }
+}
